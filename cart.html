@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart/Add items to cart-checkout page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <article class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="logo" width=125px></a>
+            </article>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="#footersection">Contact</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" alt="cart-icon" width="30px" height="30px"></a>
+            <img src="images/menu.png" alt="cart-icon" class="menu-icon" onclick="menutoggle()">
+        </div>  
+    </div>
+
+<!--------cart-item-details--------->
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>SubTotal</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="images/buy-1.jpg" alt="cart-image">
+                    <section>
+                        <p>Red Printed T shirt</p>
+                        <small>Price:$50.00</small><br>
+                        <a href="">Remove</a>
+
+                    </section>
+                </div>
+            </td>
+            <td><input type="number" value="1" min="0" max="6" id="input1" onclick="calculate1()"></td>
+            <td id="subtotal1">$50.00</td>
+        </tr>
+        <tr>
+            <td>
+                <section class="cart-info">
+                    <img src="images/buy-2.jpg" alt="cart-image">
+                    <article>
+                        <p>Red Printed T shirt</p>
+                        <small>Price:$40.00</small><br>
+                        <a href="">Remove</a>
+                    </article>
+                </section>
+            </td>
+            <td><input type="number" value="1" min="0" max="6" id="input2" onclick="calculate2()"></td>
+            <td id="subtotal2">$40.00</td>
+        </tr>
+        <tr>
+            <td>
+                <section class="cart-info">
+                    <img src="images/buy-3.jpg" alt="cartimage">
+                    <article>
+                        <p>Red Printed T shirt</p>
+                        <small>Price:$65.00</small><br>
+                        <a href="">Remove</a>
+                    </article>
+                </section>
+            </td>
+            <td><input type="number" value="1" min="0" max="6" id="input3" onclick="calculate3()"></td>
+            <td id="subtotal3">$65.00</td>
+        </tr>
+    </table>
+
+
+    <section class="total-price">
+        <table>
+            <tr>
+                <td onclick="calculate()"><button style="border: 2px solid #ff523b; padding: 5px; outline: none; cursor:pointer; color:black; border-radius: 15px;">Calculate</button></td>
+                <td id="subtotal">$155.00</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>$35.00</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="total">$190.00</td>
+            </tr>
+        </table>
+    </section>
+
+</div>
+
+
+
+<!-----------footer-------->
+<div class="footer" id="footersection">
+    <div class="container">
+        <section class="row">
+            <article class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phone.</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png" alt="playstore">
+                    <img src="images/app-store.png" alt="appstore">
+                </div>
+            </article>
+            <article class="footer-col-2">
+                <img src="images/logo-white.png" alt="website-logo">
+                <p>Our Purpose is to sustainably make the pleasure and benefits of sports accessible to the many.</p>
+            </article>
+            <article class="footer-col-3">
+                <h3>Useful links</h3>
+                <ul>
+                    <li>Coupuns</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Group</li>
+                </ul>
+            </article>
+            <article class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </article>
+        </section>
+        <hr>
+        <p class="copyright">Copyright 2020-My Work</p>
+    </div>
+</div>
+
+<!--toggle menu bar js-->
+<script>
+    var MenuItems=document.getElementById("MenuItems");
+    MenuItems.style.maxHeight="0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight=="0px"){
+            MenuItems.style.maxHeight="200px";
+        }
+        else{
+            MenuItems.style.maxHeight="0px";
+        }
+    } 
+</script>
+
+<!------js for calculating cart prices----->
+<script>
+    function calculate1(){
+    var input1=parseInt((document.getElementById("input1").value));
+    var total1=input1*50;
+    var subtotal1=document.getElementById("subtotal1");
+    subtotal1.innerText="$"+total1+".00";
+    }
+
+    function calculate2(){
+    var input2=parseInt((document.getElementById("input2").value));
+    var total2=input2*40;
+    var subtotal2=document.getElementById("subtotal2");
+    subtotal2.innerText="$"+total2+".00";
+    }
+
+    function calculate3(){
+    var input3=parseInt((document.getElementById("input3").value));
+    var total3=input3*65;
+    var subtotal3=document.getElementById("subtotal3");
+    subtotal3.innerText="$"+total3+".00";
+    }
+
+    function calculate(){
+        var input1=parseInt((document.getElementById("input1").value));
+        var total1=input1*50;
+        var input2=parseInt((document.getElementById("input2").value));
+        var total2=input2*40;
+        var input3=parseInt((document.getElementById("input3").value));
+        var total3=input3*65;
+
+
+    var subtotal=document.getElementById("subtotal");
+    var result=total1+total2+total3;
+    subtotal.innerText="$"+result+".00";
+
+    var total=document.getElementById("total");
+    var final=result+35;
+    total.innerText="$"+final+".00";
+    }
+
+</script>
+
+</body>
+</html>

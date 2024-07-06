@@ -1,0 +1,24 @@
+/* -----------offers sction---------- */
+.offer{
+    background: radial-gradient(#fff,#ffd6d6);
+    margin-top: 80px;
+    padding:30px 0;
+}
+.col-2 .offer-img{
+   padding: 50px; 
+}
+small{
+    color:#555;
+}
+.offer .small-container .btn{
+    display: inline-block;
+    background:#fb755d;
+    color:#fff;
+    padding: 8px 30px;
+    margin:30px 0;
+    border-radius:30px;
+    transition: background 0.5s;
+}
+.offer .small-container .btn:hover{
+    background: #563434;
+}
